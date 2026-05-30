@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Datenschutzerklärung der App PersonenDB — lokal-first, verschlüsselt, ohne Cloud-Zwang. DSGVO-konform." />
+  <meta name="theme-color" content="#0B0907" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <title>Datenschutzerklärung · PersonenDB</title>
+
+  <!-- Tailwind via Play CDN — keine Build-Pipeline nötig. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Optionales Tailwind-Konfig: bessere Typografie-Defaults für Fließtext.
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          maxWidth: {
+            prose: '46rem',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Sanftes Scroll für Anker-Navigation. */
+    html { scroll-behavior: smooth; }
+    /* Anker-Headings sollen nicht direkt am oberen Rand kleben. */
+    section[id] { scroll-margin-top: 1.5rem; }
+    /* Druck-Layout: weiße Hintergründe, klare Hierarchie, keine Cards. */
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+      section, article { break-inside: avoid; }
+      a { color: #000 !important; text-decoration: none !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-slate-700 antialiased dark:bg-[#0B0907] dark:text-slate-300 font-sans">
+
+  <!-- ───────── Header ───────── -->
+  <header class="border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-prose mx-auto px-6 sm:px-8 py-10">
+      <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
+        <!-- Lock-Icon (inline SVG) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span class="uppercase tracking-widest text-xs font-semibold">PersonenDB</span>
+        <span aria-hidden="true" class="text-slate-300 dark:text-slate-700">·</span>
+        <span>Datenschutz</span>
+      </div>
+
+      <h1 class="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+        Datenschutzerklärung
+      </h1>
+
+      <p class="mt-3 text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+        Diese Erklärung beschreibt, wie die App <strong class="text-slate-900 dark:text-white">PersonenDB</strong>
+        mit personenbezogenen Daten umgeht — vollständig, ehrlich und nach den Maßgaben der
+        Datenschutz-Grundverordnung (DSGVO).
+      </p>
+
+      <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          Stand · 23. Mai 2026
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+          Version 1.0
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+          Geltungsbereich · Mobile App (iOS &amp; Android)
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ───────── Lead-Statement ───────── -->
+  <section class="bg-slate-50 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-prose mx-auto px-6 sm:px-8 py-8">
+      <p class="text-slate-900 dark:text-white text-lg leading-relaxed">
+        <strong>Kernprinzip:</strong> PersonenDB ist eine lokal-first Anwendung. Sämtliche
+        Kontakt-, Beziehungs-, Gesundheits- und Notizdaten werden ausschließlich auf
+        Ihrem Gerät gespeichert. Es findet <strong>keine automatische Übertragung an einen
+        Cloud-Dienst</strong> statt. Ausnahmen sind klar benannt
+        (siehe <a href="#daten-transfers" class="underline decoration-2 underline-offset-2 text-slate-900 dark:text-white">Abschnitt 5</a>).
+      </p>
+    </div>
+  </section>
+
+  <!-- ───────── Inhaltsverzeichnis ───────── -->
+  <nav aria-label="Inhaltsverzeichnis" class="no-print">
+    <div class="max-w-prose mx-auto px-6 sm:px-8 py-8 border-b border-slate-200 dark:border-slate-800">
+      <h2 class="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-3">
+        Inhalt
+      </h2>
+      <ol class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-sm leading-relaxed list-decimal list-inside marker:text-slate-400 marker:font-semibold">
+        <li><a href="#verantwortlicher" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Verantwortlicher</a></li>
+        <li><a href="#datenkategorien" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Welche Daten verarbeitet werden</a></li>
+        <li><a href="#speicherort" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Speicherort &amp; Verschlüsselung</a></li>
+        <li><a href="#biometrie" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Biometrie &amp; Schlüsselbund</a></li>
+        <li><a href="#daten-transfers" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Datenübermittlungen außerhalb des Geräts</a></li>
+        <li><a href="#berechtigungen" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">App-Berechtigungen</a></li>
+        <li><a href="#loeschung" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Kaskadierende Löschung</a></li>
+        <li><a href="#rechtsgrundlage" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Rechtsgrundlagen</a></li>
+        <li><a href="#rechte" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Ihre Rechte</a></li>
+        <li><a href="#speicherdauer" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Speicherdauer</a></li>
+        <li><a href="#kinder" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Schutz Minderjähriger</a></li>
+        <li><a href="#berufsgeheimnis" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Hinweis für Berufsgeheimnisträger</a></li>
+        <li><a href="#aenderungen" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Änderungen</a></li>
+        <li><a href="#kontakt" class="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Kontakt &amp; Aufsichtsbehörde</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ───────── Hauptinhalt ───────── -->
+  <main class="max-w-prose mx-auto px-6 sm:px-8 py-12 space-y-14">
+
+    <!-- 1. Verantwortlicher -->
+    <section id="verantwortlicher">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        1. Verantwortlicher
+      </h2>
+      <p class="leading-relaxed">
+        Verantwortlich für die Verarbeitung personenbezogener Daten im Sinne von
+        Art.&nbsp;4 Nr.&nbsp;7 DSGVO ist:
+      </p>
+      <div class="mt-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 text-sm leading-relaxed">
+        <p class="font-semibold text-slate-900 dark:text-white">Christian Neuer</p>
+        <p>Tonnenwiese 20</p>
+        <p>56567 Neuwied</p>
+        <p>Deutschland</p>
+        <p class="mt-3">E-Mail: <a href="mailto:hafnerman@web.de" class="underline decoration-2 underline-offset-2">hafnerman@web.de</a></p>
+      </div>
+    </section>
+
+    <!-- 2. Datenkategorien -->
+    <section id="datenkategorien">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        2. Welche Daten verarbeitet werden
+      </h2>
+      <p class="leading-relaxed">
+        Welche Daten in der App entstehen, entscheiden ausschließlich Sie. Mögliche Kategorien:
+      </p>
+      <ul class="mt-4 space-y-2 list-disc list-outside pl-5 marker:text-slate-400">
+        <li><strong class="text-slate-900 dark:text-white">Stammdaten:</strong> Vor- und Nachname, Geburtsdatum, Geschlecht, Titel, Adressen, Telefonnummern, E-Mail-Adressen, Profilbild.</li>
+        <li><strong class="text-slate-900 dark:text-white">Berufliche Daten:</strong> Arbeitgeber, Position, Branche, Karriere- und Ausbildungshistorie.</li>
+        <li><strong class="text-slate-900 dark:text-white">Gesundheitsdaten (Art.&nbsp;9 DSGVO):</strong> Konditionen, Allergien, Medikamente — verschlüsselt im Geräteschlüsselbund.</li>
+        <li><strong class="text-slate-900 dark:text-white">Psychologische Daten (Art.&nbsp;9 DSGVO):</strong> Persönlichkeit, Werte, Kommunikationsstil — verschlüsselt im Geräteschlüsselbund.</li>
+        <li><strong class="text-slate-900 dark:text-white">Beziehungsdaten:</strong> Verbindungen zu anderen gespeicherten Personen, Beziehungsstatus, Familienzusammenhänge.</li>
+        <li><strong class="text-slate-900 dark:text-white">Interaktionen &amp; Notizen:</strong> Datum, Art (Anruf, Treffen, Nachricht), Freitext-Notiz, Erinnerungen.</li>
+        <li><strong class="text-slate-900 dark:text-white">Sprachnotizen:</strong> Audio-Dateien, die Sie über das integrierte Mikrofon-Feature aufnehmen (siehe <a href="#berechtigungen" class="underline">RECORD_AUDIO</a>).</li>
+        <li><strong class="text-slate-900 dark:text-white">Mediendateien:</strong> Fotos, Videos, PDF-Anhänge — nur wenn manuell hinzugefügt.</li>
+        <li><strong class="text-slate-900 dark:text-white">Geografische Daten:</strong> Aus den Adressen abgeleitete Koordinaten (siehe <a href="#berechtigungen" class="underline">ACCESS_FINE_LOCATION</a>).</li>
+        <li><strong class="text-slate-900 dark:text-white">App-Einstellungen:</strong> Sprache, Theme, Erinnerungs-Präferenzen, eigenes Visitenkarten-Profil.</li>
+      </ul>
+    </section>
+
+    <!-- 3. Speicherort & Verschlüsselung -->
+    <section id="speicherort">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        3. Speicherort &amp; Verschlüsselung
+      </h2>
+      <p class="leading-relaxed">
+        Alle in PersonenDB erfassten Daten werden ausschließlich im App-internen
+        Speicherbereich Ihres Geräts abgelegt:
+      </p>
+      <ul class="mt-4 space-y-3 text-sm leading-relaxed">
+        <li class="flex gap-3">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>
+          <span><strong class="text-slate-900 dark:text-white">SQLite-Datenbank</strong> für die strukturierten Personenobjekte. Der Datei-Container des Betriebssystems ist sandboxed — andere Apps können nicht darauf zugreifen.</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>
+          <span><strong class="text-slate-900 dark:text-white">iOS Keychain / Android Keystore</strong> für besonders sensible Felder (Gesundheits- und psychologische Daten), wenn Sie die optionale Feldverschlüsselung aktivieren. Diese Daten werden vom Betriebssystem AES-256-verschlüsselt und sind an die Geräte-Biometrie gebunden.</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>
+          <span><strong class="text-slate-900 dark:text-white">App-Dokumentenverzeichnis</strong> für Profilbilder, Anhänge und Sprachnotizen. Bei aktiviertem Geräte-Backup (iCloud bzw. Google Drive) wird dieser Bereich vom Betriebssystem ggf. in Ihre persönliche Cloud gesichert — wir haben darauf keinen Einfluss.</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>
+          <span><strong class="text-slate-900 dark:text-white">Verschlüsselte Backups</strong>: Beim manuellen Export wird die Backup-Datei mit AES-256-GCM und einem Passwort Ihrer Wahl verschlüsselt (Schlüsselableitung via PBKDF2, 100.000 Iterationen, SHA-256).</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4. Biometrie -->
+    <section id="biometrie">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        4. Biometrie &amp; Schlüsselbund
+      </h2>
+      <p class="leading-relaxed">
+        PersonenDB nutzt die biometrischen Funktionen des Betriebssystems
+        (<strong class="text-slate-900 dark:text-white">Face&nbsp;ID</strong>,
+        <strong class="text-slate-900 dark:text-white">Touch&nbsp;ID</strong> auf iOS und das
+        <strong class="text-slate-900 dark:text-white">Android Keystore Biometric Framework</strong>
+        auf Android) für zwei Zwecke:
+      </p>
+      <ol class="mt-4 space-y-2 list-decimal list-outside pl-5 marker:text-slate-400">
+        <li><strong class="text-slate-900 dark:text-white">App-Sperre:</strong> Optionaler Schutz gegen Fremdzugriff am entsperrten Gerät, mit konfigurierbarem Auto-Lock-Timer (Aus / 1 / 5 / 15 / 60 Minuten).</li>
+        <li><strong class="text-slate-900 dark:text-white">Feldverschlüsselung:</strong> Lesen und Schreiben besonders sensibler Felder (Gesundheits- und psychologische Daten) kann an eine erfolgreiche biometrische Verifikation gekoppelt werden. Der Schlüssel wird vom Betriebssystem im hardware-gestützten Secure Element verwaltet.</li>
+      </ol>
+      <p class="mt-4 leading-relaxed">
+        <strong class="text-slate-900 dark:text-white">Wichtig:</strong> Biometrische Rohdaten
+        (Fingerabdruck-Templates, Gesichts-Geometrie) werden niemals an die App übertragen.
+        Das Betriebssystem teilt der App lediglich das Ergebnis der Verifikation
+        („erfolgreich" / „abgebrochen") mit.
+      </p>
+    </section>
+
+    <!-- 5. Daten-Transfers -->
+    <section id="daten-transfers">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        5. Datenübermittlungen außerhalb des Geräts
+      </h2>
+      <p class="leading-relaxed">
+        Im Normalbetrieb verlassen <strong>keine</strong> Inhalte das Gerät. Es gibt vier
+        eng begrenzte Ausnahmefälle, die wir hier transparent benennen:
+      </p>
+
+      <!-- 5.1 Sentry -->
+      <article class="mt-6 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+        <h3 class="font-semibold text-slate-900 dark:text-white">
+          5.1 Fehlerprotokollierung (Sentry)
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed">
+          Zur Stabilitätssicherung übermittelt die App <strong>automatisch
+          anonymisierte Absturzberichte</strong> an den Dienst Sentry
+          (Functional Software, Inc., 132 Hawthorne St, San Francisco, CA 94107, USA).
+          Übertragen werden ausschließlich technische Daten: Stacktrace, Betriebssystem-Version,
+          App-Version, Gerätetyp. <strong>Es werden keine Personendaten, keine Klienteneinträge,
+          keine Audionotizen und keine Inhalte aus der Datenbank übertragen.</strong>
+        </p>
+        <p class="mt-2 text-sm leading-relaxed">
+          Rechtsgrundlage: Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse
+          an einer funktionierenden Anwendung). Die Sentry-Übermittlung kann in den
+          App-Einstellungen vollständig deaktiviert werden.
+        </p>
+      </article>
+
+      <!-- 5.2 KI-Helper -->
+      <article class="mt-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+        <h3 class="font-semibold text-slate-900 dark:text-white">
+          5.2 Optionale KI-Nachrichten (Google Gemini)
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed">
+          Wenn Sie aktiv die Funktion „✨&nbsp;KI-Nachricht" auf einem Personen-Profil
+          auslösen, werden ausgewählte Felder dieser Person
+          (Name, Alter, Notizen, Interessen, letzte Interaktionen) an die
+          Generative-Language-API von Google Ireland Limited übermittelt, um einen
+          Nachrichtenvorschlag zu erzeugen. Gesundheits- und psychologische Daten
+          werden hierbei <strong>nicht</strong> übermittelt.
+        </p>
+        <p class="mt-2 text-sm leading-relaxed">
+          Diese Funktion ist <strong>opt-in</strong>: Sie wird nur durch Ihren expliziten
+          Tap ausgelöst. Wenn Sie sie nie nutzen, verlässt zu diesem Zweck keine
+          Information das Gerät. Rechtsgrundlage: Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO
+          (ausdrückliche Einwilligung durch aktive Funktionsauslösung).
+        </p>
+        <p class="mt-2 text-sm leading-relaxed">
+          Hinweis für Berufsgeheimnisträger: Die KI-Funktion ist mit
+          Schweigepflicht-Daten (§&nbsp;203 StGB) <strong>nicht vereinbar</strong>
+          und sollte für Klientendaten nicht verwendet werden.
+        </p>
+      </article>
+
+      <!-- 5.3 Maps -->
+      <article class="mt-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+        <h3 class="font-semibold text-slate-900 dark:text-white">
+          5.3 Kartendarstellung (Google Maps / Apple Maps)
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed">
+          Beim Anzeigen der Netzwerk-Karte werden Adress-Strings zur Bestimmung der
+          Koordinaten an den Geocoder des Betriebssystems übergeben (Apple Maps unter
+          iOS, Google Geocoding unter Android). Beim Tippen auf „Route starten" wird
+          ein Deep-Link in die System-Karten-App geöffnet.
+        </p>
+        <p class="mt-2 text-sm leading-relaxed">
+          In dieser App-Version ist die native Kartendarstellung übergangsweise durch
+          einen Platzhalter ersetzt — es findet derzeit kein Tile-Request an Google
+          Maps statt. Sobald die Funktion in einer kommenden Version aktiviert wird,
+          erscheint dieser Abschnitt entsprechend angepasst.
+        </p>
+      </article>
+
+      <!-- 5.4 Plattform-Anbieter -->
+      <article class="mt-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
+        <h3 class="font-semibold text-slate-900 dark:text-white">
+          5.4 Plattform-Anbieter (Apple, Google)
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed">
+          Bezug, Installation und Update der App erfolgen über den
+          <strong>Apple App Store</strong> bzw. den <strong>Google Play Store</strong>.
+          Diese Anbieter erheben im Rahmen der Distribution eigenständige Daten
+          (Installationsstatus, Geräte-IDs, Crash-Statistiken auf Plattform-Ebene).
+          Auf diese Verarbeitung haben wir keinen Einfluss. Es gelten die
+          Datenschutzhinweise von Apple bzw. Google.
+        </p>
+        <p class="mt-2 text-sm leading-relaxed">
+          Lokale Benachrichtigungen (Geburtstagserinnerungen, Termine) werden direkt
+          vom Betriebssystem ausgelöst. Es findet <strong>keine Push-Server-Kommunikation</strong>
+          statt — die Benachrichtigungs-Logik läuft vollständig auf Ihrem Gerät.
+        </p>
+      </article>
+    </section>
+
+    <!-- 6. Berechtigungen -->
+    <section id="berechtigungen">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        6. App-Berechtigungen
+      </h2>
+      <p class="leading-relaxed">
+        PersonenDB fragt nur jene Berechtigungen ab, die für die jeweils ausgelöste
+        Funktion technisch notwendig sind. Sie können jede Berechtigung in den
+        Geräte-Einstellungen jederzeit entziehen.
+      </p>
+
+      <dl class="mt-6 divide-y divide-slate-200 dark:divide-slate-800 border-y border-slate-200 dark:border-slate-800">
+        <!-- RECORD_AUDIO -->
+        <div class="py-4">
+          <dt class="font-semibold text-slate-900 dark:text-white">
+            <code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 mr-2">RECORD_AUDIO</code>
+            Mikrofonzugriff
+          </dt>
+          <dd class="mt-2 text-sm leading-relaxed">
+            Wird ausschließlich für die Funktion „Sprachnotizen" benötigt. Eine
+            Aufnahme erfolgt nur, wenn Sie aktiv den Aufnahme-Knopf in einem
+            Personen-Profil drücken. Die Audio-Datei wird sofort lokal im
+            App-Dokumentenverzeichnis abgelegt und verlässt das Gerät nicht.
+            Es findet keine Sprachanalyse, keine Cloud-Transkription und kein
+            Sprache-zu-Text-Verarbeitung statt.
+          </dd>
+        </div>
+
+        <!-- ACCESS_FINE_LOCATION -->
+        <div class="py-4">
+          <dt class="font-semibold text-slate-900 dark:text-white">
+            <code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 mr-2">ACCESS_FINE_LOCATION</code>
+            <code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 mr-2">ACCESS_COARSE_LOCATION</code>
+            Standortzugriff
+          </dt>
+          <dd class="mt-2 text-sm leading-relaxed">
+            Wird ausschließlich verwendet, um die in einem Kontakt hinterlegten
+            Postadressen in geografische Koordinaten zu übersetzen (Geocoding) und
+            diese auf der lokalen Netzwerkkarte als Marker darzustellen. Die Anfrage
+            geht an den System-Geocoder des Betriebssystems; Ihr eigener
+            Live-Standort wird zu keinem Zeitpunkt erfasst, gespeichert oder
+            übertragen. Die Berechtigung kann verweigert werden — die App
+            funktioniert dann weiter, lediglich die Karten-Ansicht zeigt
+            geocodierte Marker nicht an.
+          </dd>
+        </div>
+
+        <!-- CAMERA -->
+        <div class="py-4">
+          <dt class="font-semibold text-slate-900 dark:text-white">
+            <code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 mr-2">CAMERA</code>
+            Kamerazugriff
+          </dt>
+          <dd class="mt-2 text-sm leading-relaxed">
+            Wird beim Setzen eines Profilbilds verwendet, falls Sie das Bild
+            direkt aufnehmen statt aus der Mediathek auszuwählen.
+          </dd>
+        </div>
+
+        <!-- READ_MEDIA_IMAGES -->
+        <div class="py-4">
+          <dt class="font-semibold text-slate-900 dark:text-white">
+            <code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 mr-2">READ_MEDIA_IMAGES</code>
+            Zugriff auf Bilder
+          </dt>
+          <dd class="mt-2 text-sm leading-relaxed">
+            Wird verwendet, wenn Sie ein Profilbild oder einen Bildanhang aus
+            der Galerie auswählen. Die Auswahl erfolgt über den System-Picker;
+            die App erhält ausschließlich Zugriff auf die explizit ausgewählten
+            Dateien.
+          </dd>
+        </div>
+
+        <!-- READ_CONTACTS -->
+        <div class="py-4">
+          <dt class="font-semibold text-slate-900 dark:text-white">
+            <code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 mr-2">READ_CONTACTS</code>
+            Telefonbuch-Zugriff
+          </dt>
+          <dd class="mt-2 text-sm leading-relaxed">
+            Wird ausschließlich für die manuell ausgelöste Import-Funktion benötigt.
+            Sie wählen die zu importierenden Kontakte aus einer Liste aus; nur die
+            ausgewählten Einträge werden in die lokale Datenbank übernommen. Es
+            findet kein automatischer oder kontinuierlicher Abgleich statt.
+          </dd>
+        </div>
+
+        <!-- POST_NOTIFICATIONS -->
+        <div class="py-4">
+          <dt class="font-semibold text-slate-900 dark:text-white">
+            <code class="text-xs px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 mr-2">POST_NOTIFICATIONS</code>
+            Benachrichtigungen
+          </dt>
+          <dd class="mt-2 text-sm leading-relaxed">
+            Wird verwendet, um lokale Erinnerungen (Geburtstage, Jubiläen,
+            individuelle Termine) auf Ihrem Gerät anzuzeigen. Alle Erinnerungen
+            werden vom Betriebssystem aus der lokalen Datenbank erzeugt — es
+            findet keine Push-Server-Kommunikation statt.
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- 7. Kaskadierende Löschung -->
+    <section id="loeschung">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        7. Kaskadierende Löschung
+      </h2>
+      <p class="leading-relaxed">
+        Wird ein Kontakt aus PersonenDB gelöscht, entfernt die App vollständig
+        alle damit verknüpften Inhalte. Es gibt keine verwaisten Daten und
+        keine „versteckten" Reste:
+      </p>
+      <ul class="mt-4 space-y-2 list-disc list-outside pl-5 marker:text-slate-400 text-sm leading-relaxed">
+        <li>Der Datensatz selbst wird aus der SQLite-Datenbank entfernt.</li>
+        <li><strong class="text-slate-900 dark:text-white">Alle Sprachnotizen</strong> dieses Kontakts werden aus dem App-Dokumentenverzeichnis gelöscht.</li>
+        <li><strong class="text-slate-900 dark:text-white">Alle Bild-, Video- und PDF-Anhänge</strong> werden aus dem App-Dokumentenverzeichnis gelöscht.</li>
+        <li>Das <strong class="text-slate-900 dark:text-white">Profilbild</strong> wird aus dem App-Dokumentenverzeichnis gelöscht.</li>
+        <li>Etwaige im <strong class="text-slate-900 dark:text-white">iOS Keychain / Android Keystore</strong> abgelegte Gesundheits- und psychologische Daten werden entfernt.</li>
+        <li><strong class="text-slate-900 dark:text-white">Beziehungs-Verknüpfungen</strong> bei anderen Kontakten werden automatisch bereinigt (kein dangling reference).</li>
+      </ul>
+      <p class="mt-4 leading-relaxed text-sm">
+        Über „Einstellungen → Alle Daten löschen" können Sie zudem mit einem
+        einzigen Bestätigungsschritt sämtliche Inhalte unwiderruflich entfernen.
+      </p>
+    </section>
+
+    <!-- 8. Rechtsgrundlage -->
+    <section id="rechtsgrundlage">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        8. Rechtsgrundlagen
+      </h2>
+      <ul class="space-y-3 text-sm leading-relaxed">
+        <li>
+          <strong class="text-slate-900 dark:text-white">Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO</strong>
+          (Einwilligung): Sie nutzen die App freiwillig und entscheiden selbst, welche
+          Daten Sie eingeben.
+        </li>
+        <li>
+          <strong class="text-slate-900 dark:text-white">Art.&nbsp;9 Abs.&nbsp;2 lit.&nbsp;a DSGVO</strong>:
+          Die optionale Erfassung von Gesundheits- und psychologischen Daten erfolgt nur
+          mit Ihrer ausdrücklichen Einwilligung. Diese Daten werden durch die
+          OS-gestützte Feldverschlüsselung besonders geschützt.
+        </li>
+        <li>
+          <strong class="text-slate-900 dark:text-white">Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO</strong>
+          (berechtigtes Interesse): Anonymisierte Absturzberichte (siehe
+          <a href="#daten-transfers" class="underline">Abschnitt 5.1</a>) zur Stabilitätssicherung.
+        </li>
+      </ul>
+    </section>
+
+    <!-- 9. Ihre Rechte -->
+    <section id="rechte">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        9. Ihre Rechte
+      </h2>
+      <p class="leading-relaxed">
+        Sie haben jederzeit das Recht auf:
+      </p>
+      <ul class="mt-4 space-y-2 list-disc list-outside pl-5 marker:text-slate-400 text-sm leading-relaxed">
+        <li><strong class="text-slate-900 dark:text-white">Auskunft</strong> (Art.&nbsp;15 DSGVO) — alle Daten sind direkt in der App vollständig einsehbar.</li>
+        <li><strong class="text-slate-900 dark:text-white">Berichtigung</strong> (Art.&nbsp;16 DSGVO) — jede Information kann in der App bearbeitet werden.</li>
+        <li><strong class="text-slate-900 dark:text-white">Löschung</strong> (Art.&nbsp;17 DSGVO) — Einzellöschung pro Kontakt oder vollständige Löschung aller Daten über „Einstellungen → Alle Daten löschen".</li>
+        <li><strong class="text-slate-900 dark:text-white">Einschränkung</strong> (Art.&nbsp;18 DSGVO).</li>
+        <li><strong class="text-slate-900 dark:text-white">Datenübertragbarkeit</strong> (Art.&nbsp;20 DSGVO) — vollständiger JSON-Export aller Daten über „Einstellungen → Backup".</li>
+        <li><strong class="text-slate-900 dark:text-white">Widerspruch</strong> (Art.&nbsp;21 DSGVO) — Deinstallation der App entfernt alle lokalen Daten.</li>
+        <li><strong class="text-slate-900 dark:text-white">Beschwerde</strong> bei der zuständigen Datenschutz-Aufsichtsbehörde (Art.&nbsp;77 DSGVO).</li>
+      </ul>
+      <p class="mt-4 text-sm leading-relaxed">
+        Da alle Daten ausschließlich lokal auf Ihrem Gerät liegen, üben Sie diese
+        Rechte überwiegend selbständig in der App aus. Bei Fragen wenden Sie sich
+        an den unter <a href="#kontakt" class="underline">Abschnitt 14</a> genannten Verantwortlichen.
+      </p>
+    </section>
+
+    <!-- 10. Speicherdauer -->
+    <section id="speicherdauer">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        10. Speicherdauer
+      </h2>
+      <p class="leading-relaxed">
+        Die Daten bleiben auf Ihrem Gerät, bis Sie sie manuell löschen oder die
+        App deinstallieren. Es gibt keine automatische Löschung und keine
+        serverseitige Aufbewahrungsfrist, weil keine Server-Speicherung
+        stattfindet. Bei aktivem Geräte-Backup (iCloud, Google Drive) bleiben
+        Kopien der App-Daten ggf. in Ihrer persönlichen Cloud erhalten, bis Sie
+        diese dort löschen.
+      </p>
+    </section>
+
+    <!-- 11. Kinder -->
+    <section id="kinder">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        11. Schutz Minderjähriger
+      </h2>
+      <p class="leading-relaxed">
+        PersonenDB richtet sich an volljährige Nutzerinnen und Nutzer. Die App
+        erhebt wissentlich keine Daten von Personen unter 16 Jahren. Sollten
+        Sie als Erziehungsberechtigte/r Hinweise haben, dass ein Kind die App
+        ohne Ihre Einwilligung verwendet, bitten wir um Kontaktaufnahme.
+      </p>
+    </section>
+
+    <!-- 12. Berufsgeheimnis -->
+    <section id="berufsgeheimnis">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        12. Hinweis für Berufsgeheimnisträger
+      </h2>
+      <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
+        <p class="leading-relaxed text-sm">
+          Bei beruflicher Nutzung (etwa durch Therapeut:innen, Heilpraktiker:innen,
+          Ärzt:innen, Anwält:innen, Coaches) gelten zusätzlich zu dieser
+          Datenschutzerklärung Ihre <strong class="text-slate-900 dark:text-white">berufsrechtlichen
+          Pflichten</strong> — insbesondere die Schweigepflicht nach §&nbsp;203 StGB
+          sowie die Maßgaben Ihrer Standes- und Aufsichtsorganisationen.
+        </p>
+        <p class="mt-3 leading-relaxed text-sm">
+          Empfehlungen für den professionellen Einsatz:
+        </p>
+        <ul class="mt-3 space-y-1.5 list-disc list-outside pl-5 marker:text-slate-400 text-sm">
+          <li>Feldverschlüsselung für sensible Klientendaten aktivieren.</li>
+          <li>Auto-Lock-Timer auf 1 oder 5 Minuten setzen.</li>
+          <li>Die KI-Nachrichten-Funktion (siehe <a href="#daten-transfers" class="underline">5.2</a>) für Klientendaten nicht verwenden.</li>
+          <li>Geräte-Backup auf iCloud / Google Drive bewusst entscheiden (ggf. deaktivieren).</li>
+          <li>Bei Verarbeitung im Auftrag eines Dritten ggf. eine Datenschutz-Folgenabschätzung (Art.&nbsp;35 DSGVO) prüfen.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 13. Änderungen -->
+    <section id="aenderungen">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        13. Änderungen dieser Erklärung
+      </h2>
+      <p class="leading-relaxed">
+        Diese Datenschutzerklärung kann angepasst werden — etwa bei neuen
+        App-Funktionen, geänderten Rechtsgrundlagen oder neuen
+        Aufsichtsbehörden-Vorgaben. Die jeweils aktuelle Version ist sowohl
+        in der App (Menü „Mehr → Datenschutz") als auch unter dieser URL
+        einsehbar. Wesentliche Änderungen werden in den App-Update-Notes
+        kommuniziert.
+      </p>
+    </section>
+
+    <!-- 14. Kontakt -->
+    <section id="kontakt">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+        14. Kontakt &amp; Aufsichtsbehörde
+      </h2>
+      <p class="leading-relaxed">
+        Für alle Anliegen rund um den Datenschutz erreichen Sie den Verantwortlichen
+        wie in <a href="#verantwortlicher" class="underline">Abschnitt 1</a> angegeben.
+      </p>
+      <p class="mt-4 leading-relaxed text-sm">
+        Ergänzend haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde
+        zu beschweren. Zuständig in Deutschland sind in der Regel die
+        Landesdatenschutzbeauftragten des jeweiligen Bundeslandes; in Österreich
+        die Datenschutzbehörde (DSB); in der Schweiz der Eidgenössische Datenschutz-
+        und Öffentlichkeitsbeauftragte (EDÖB).
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ───────── Footer ───────── -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 mt-12">
+    <div class="max-w-prose mx-auto px-6 sm:px-8 py-8 text-xs text-slate-500 dark:text-slate-500 leading-relaxed">
+      <p>
+        Diese Datenschutzerklärung beschreibt den Ist-Zustand der App PersonenDB
+        zum oben angegebenen Stand. Sie ersetzt keine rechtliche Einzelberatung.
+      </p>
+      <p class="mt-3">
+        <a href="#" class="underline hover:text-slate-700 dark:hover:text-slate-300">Zum Seitenanfang</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
